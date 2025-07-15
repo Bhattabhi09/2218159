@@ -1,0 +1,180 @@
+
+:root {
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary-color: #6366f1;
+  --primary-hover: #4338ca;
+  --primary-active: #3730a3;
+  --secondary-color: #f472b6;
+  --secondary-hover: #ec4899;
+  --text-color-dark: #18181b;
+  --text-color-light: #f9fafb;
+  --bg-dark: #18181b;
+  --bg-light: #f9fafb;
+  --border-radius: 1.2rem;
+  --shadow: 0 6px 24px rgba(0,0,0,0.12);
+  --shadow-light: 0 2px 8px rgba(0,0,0,0.06);
+  --transition-speed: 0.25s;
+  --focus-ring: 0 0 0 3px #6366f1aa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-family);
+  background-color: var(--bg-dark);
+  color: var(--text-color-light);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  line-height: 1.7;
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 2.5rem 1rem 2rem 1rem;
+  background: linear-gradient(120deg, #18181b 0%, #23272f 100%);
+}
+
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+  color: var(--primary-color);
+}
+
+
+a {
+  color: var(--secondary-color);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-speed);
+}
+a:hover {
+  color: var(--secondary-hover);
+  text-decoration-thickness: 2px;
+}
+
+
+button {
+  background: linear-gradient(90deg, var(--primary-color) 60%, var(--secondary-color) 100%);
+  color: #fff;
+  border: none;
+  padding: 0.85rem 2rem;
+  border-radius: var(--border-radius);
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  letter-spacing: 0.01em;
+}
+button:hover {
+  background: linear-gradient(90deg, var(--primary-hover) 60%, var(--secondary-hover) 100%);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px) scale(1.03);
+}
+button:active {
+  background: var(--primary-active);
+  transform: scale(0.98);
+}
+button:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-top: 0.5rem;
+  border: 1.5px solid #4b5563;
+  background-color: #23232b;
+  color: var(--text-color-light);
+  border-radius: var(--border-radius);
+  font-size: 1.05rem;
+  transition: border-color var(--transition-speed), background-color var(--transition-speed), box-shadow var(--transition-speed);
+  box-shadow: none;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary-color);
+  background-color: #23272f;
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  background: rgba(30,30,36,0.95);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+
+.card {
+  background: linear-gradient(120deg, #23232b 60%, #18181b 100%);
+  padding: 2.2rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  margin-bottom: 2.2rem;
+  transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+}
+.card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px) scale(1.01);
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color-light: #1f2937;
+    --bg-dark: #ffffff;
+    --primary-color: #6366f1;
+    --primary-hover: #4338ca;
+    --secondary-color: #f472b6;
+    --secondary-hover: #ec4899;
+  }
+
+  body {
+    background: linear-gradient(120deg, #f9fafb 0%, #e0e7ef 100%);
+    color: var(--text-color-light);
+  }
+
+  .card {
+    background: linear-gradient(120deg, #fff 60%, #f3f4f6 100%);
+    color: #1f2937;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .container {
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+
+  input, textarea, select {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    border-color: #cbd5e1;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    background-color: #e5e7eb;
+  }
+}
