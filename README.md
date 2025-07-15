@@ -5,4 +5,5 @@ Afford Medical Frontend Project
 
 Here’s a preview of the working URL Shortener App:
 
-![App Output](./frontend/public/images/output.png)
+![App Output](./frontend/images/output.png)
+
